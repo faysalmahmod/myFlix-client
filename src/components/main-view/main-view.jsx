@@ -1,61 +1,67 @@
-import React, { useState } from "react";
-import axios from "axios";
-import { MovieCard } from "../movie-card/movie-card";
-import { MovieView } from "../movie-view/movie-view";
+import React, { useState } from 'react'
+import axios from 'axios'
+import { MovieCard } from '../movie-card/movie-card'
+import { MovieView } from '../movie-view/movie-view'
+import { LoginView } from '../login-view/login-view'
 
 export class MainView extends React.Component {
-  constructor() {
-    super();
+  constructor () {
+    super()
     this.state = {
       movies: [],
-      selectedMovie: null,
-    };
+      selectedMovie: null
+    }
   }
 
-  componentDidMount() {
+  componentDidMount () {
     axios
-      .get("http://api-movie-myflix.herokuapp.com/movies")
-      .then((response) => {
-        this.setState({ movies: response.data });
+      .get('http://api-movie-myflix.herokuapp.com/movies')
+      .then(response => {
+        this.setState({ movies: response.data })
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch(error => {
+        console.log(error)
+      })
   }
 
-  setSelectedMovie(newSelectedMovie) {
+  setSelectedMovie (newSelectedMovie) {
     this.setState({
-      selectedMovie: newSelectedMovie,
-    });
+      selectedMovie: newSelectedMovie
+    })
   }
-  render() {
-    const { movies, selectedMovie } = this.state;
+
+  onLoggedIn (user) {
+    this.setState({ user })
+  }
+  render () {
+    const { movies, selectedMovie } = this.state
+
+    if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
 
     if (selectedMovie)
       return (
         <MovieView
           movie={selectedMovie}
-          onBackClick={(newSelectedMovie) => {
-            this.setSelectedMovie(newSelectedMovie);
+          onBackClick={newSelectedMovie => {
+            this.setSelectedMovie(newSelectedMovie)
           }}
         />
-      );
+      )
 
-    if (movies.length === 0)
-      return <div className="main-view"></div>;
+    if (movies.length === 0) return <div className='main-view'></div>
 
     return (
-      <div className="main-view">
-        {movies.map((movie) => (
+      <div className='main-view'>
+        {movies.map(movie => (
           <MovieCard
             key={movie._id}
             movie={movie}
-            onMovieClick={(movie) => {
-              this.setSelectedMovie(movie);
+            onMovieClick={movie => {
+              this.setSelectedMovie(movie)
             }}
           />
         ))}
       </div>
-    );
+    )
   }
 }
