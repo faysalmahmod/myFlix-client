@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import { RegistrationView } from '../registration-view/registration-view';
 import { MovieCard } from '../movie-card/movie-card'
 import { MovieView } from '../movie-view/movie-view'
 import { LoginView } from '../login-view/login-view'
@@ -9,7 +10,8 @@ export class MainView extends React.Component {
     super()
     this.state = {
       movies: [],
-      selectedMovie: null
+      selectedMovie: null,
+      user:null
     }
   }
 
