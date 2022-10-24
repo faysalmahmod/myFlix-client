@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import {
@@ -113,4 +111,3 @@ export function RegistrationView (props) {
 RegistrationView.propTypes = {
   onRegistration: PropTypes.func.isRequired
 }
->>>>>>> Stashed changes

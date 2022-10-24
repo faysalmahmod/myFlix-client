@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import {
@@ -86,4 +84,3 @@ export function LoginView (props) {
 LoginView.propTypes = {
   onLoggedIn: PropTypes.func.isRequired
 }
->>>>>>> Stashed changes

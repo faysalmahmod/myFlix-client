@@ -1,17 +1,10 @@
-<<<<<<< Updated upstream
-import React, { useState } from "react";
-import axios from "axios";
-import { MovieCard } from "../movie-card/movie-card";
-import { MovieView } from "../movie-view/movie-view";
-=======
 import React, { useState } from 'react'
 import axios from 'axios'
 import { RegistrationView } from '../registration-view/registration-view'
 import { MovieCard } from '../movie-card/movie-card'
 import { MovieView } from '../movie-view/movie-view'
 import { LoginView } from '../login-view/login-view'
-import Row from 'react-bootstrap/Row'
->>>>>>> Stashed changes
+import {Row,Col} from 'react-bootstrap'
 
 export class MainView extends React.Component {
   constructor() {
@@ -43,15 +36,6 @@ export class MainView extends React.Component {
 
     if (selectedMovie)
       return (
-<<<<<<< Updated upstream
-        <MovieView
-          movie={selectedMovie}
-          onBackClick={(newSelectedMovie) => {
-            this.setSelectedMovie(newSelectedMovie);
-          }}
-        />
-      );
-=======
         <Row className="justify-content-md-center">
           <Col md={8}>
             <MovieView
@@ -63,21 +47,15 @@ export class MainView extends React.Component {
           </Col>
         </Row>
       )
->>>>>>> Stashed changes
 
     if (movies.length === 0)
       return <div className="main-view"></div>;
 
     return (
-<<<<<<< Updated upstream
-      <div className="main-view">
-        {movies.map((movie) => (
-=======
       
         <Row className="main-view justify-content-md-center">
         {movies.map(movie => (
           <Col md={3}>
->>>>>>> Stashed changes
           <MovieCard
             key={movie._id}
             movie={movie}
@@ -87,13 +65,8 @@ export class MainView extends React.Component {
           />
           </Col>
         ))}
-<<<<<<< Updated upstream
-      </div>
-    );
-=======
         </Row>
 
     )
->>>>>>> Stashed changes
   }
 }

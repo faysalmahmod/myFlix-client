@@ -25265,14 +25265,11 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _registrationView = require("../registration-view/registration-view");
 var _movieCard = require("../movie-card/movie-card");
 var _movieView = require("../movie-view/movie-view");
-<<<<<<< Updated upstream
-=======
 var _loginView = require("../login-view/login-view");
-var _row = require("react-bootstrap/Row");
-var _rowDefault = parcelHelpers.interopDefault(_row);
->>>>>>> Stashed changes
+var _reactBootstrap = require("react-bootstrap");
 class MainView extends _reactDefault.default.Component {
     constructor(){
         super();
@@ -25296,40 +25293,19 @@ class MainView extends _reactDefault.default.Component {
         });
     }
     render() {
-<<<<<<< Updated upstream
         const { movies , selectedMovie  } = this.state;
-        if (selectedMovie) return(/*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
-            movie: selectedMovie,
-            onBackClick: (newSelectedMovie)=>{
-                this.setSelectedMovie(newSelectedMovie);
-            },
-            __source: {
-                fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 36
-=======
-        const { movies , selectedMovie , user  } = this.state;
-        if (!this.state.user) return(/*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
-            onLoggedIn: (user1)=>this.onLoggedIn(this.state.user)
-            ,
-            __source: {
-                fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 43
-            },
-            __self: this
-        }));
-        if (selectedMovie) return(/*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+        if (selectedMovie) return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
             className: "justify-content-md-center",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 46
->>>>>>> Stashed changes
+                lineNumber: 39
             },
             __self: this,
-            children: /*#__PURE__*/ _jsxRuntime.jsx(Col, {
+            children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                 md: 8,
                 __source: {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 47
+                    lineNumber: 40
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
@@ -25339,7 +25315,7 @@ class MainView extends _reactDefault.default.Component {
                     },
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 48
+                        lineNumber: 41
                     },
                     __self: this
                 })
@@ -25349,34 +25325,22 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-<<<<<<< Updated upstream
-                lineNumber: 45
-=======
-                lineNumber: 58
->>>>>>> Stashed changes
+                lineNumber: 52
             },
             __self: this
         }));
-        return(/*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+        return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
             className: "main-view justify-content-md-center",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-<<<<<<< Updated upstream
-                lineNumber: 48
-=======
-                lineNumber: 62
->>>>>>> Stashed changes
+                lineNumber: 56
             },
             __self: this,
-            children: movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(Col, {
+            children: movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                     md: 3,
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-<<<<<<< Updated upstream
-                        lineNumber: 50
-=======
-                        lineNumber: 64
->>>>>>> Stashed changes
+                        lineNumber: 58
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
@@ -25386,7 +25350,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 65
+                            lineNumber: 59
                         },
                         __self: this
                     }, movie._id)
@@ -25401,11 +25365,7 @@ class MainView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-<<<<<<< Updated upstream
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","@parcel/transformer-js/src/esmodule-helpers.js":"8lxon","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5QWMd","axios":"7gv0e"}],"6EiBJ":[function(require,module,exports) {
-=======
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","@parcel/transformer-js/src/esmodule-helpers.js":"8lxon","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5QWMd","axios":"7gv0e","../registration-view/registration-view":"aP2YV","../login-view/login-view":"054li","react-bootstrap/Row":"c0x1x"}],"6EiBJ":[function(require,module,exports) {
->>>>>>> Stashed changes
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","@parcel/transformer-js/src/esmodule-helpers.js":"8lxon","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5QWMd","axios":"7gv0e","../registration-view/registration-view":"aP2YV","../login-view/login-view":"054li","react-bootstrap":"h2YVd"}],"6EiBJ":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$4249 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -25419,26 +25379,19 @@ parcelHelpers.export(exports, "MovieCard", ()=>MovieCard
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-<<<<<<< Updated upstream
-=======
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _card = require("react-bootstrap/Card");
 var _cardDefault = parcelHelpers.interopDefault(_card);
->>>>>>> Stashed changes
 class MovieCard extends _reactDefault.default.Component {
     render() {
         const { movie , onMovieClick  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default, {
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
-<<<<<<< Updated upstream
-                lineNumber: 7
-=======
                 lineNumber: 10
->>>>>>> Stashed changes
             },
             __self: this,
             children: [
@@ -25497,11 +25450,7 @@ class MovieCard extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-<<<<<<< Updated upstream
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"8lxon","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5QWMd"}],"8lxon":[function(require,module,exports) {
-=======
 },{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"8lxon","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5QWMd","prop-types":"1tgq3","react-bootstrap/Button":"9CzHT","react-bootstrap/Card":"MoOk8"}],"8lxon":[function(require,module,exports) {
->>>>>>> Stashed changes
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -25653,9 +25602,6 @@ function registerExportsForReactRefresh(module) {
     }
 }
 
-<<<<<<< Updated upstream
-},{"react-refresh/runtime":"2jO7i"}],"ikZdr":[function(require,module,exports) {
-=======
 },{"react-refresh/runtime":"2jO7i"}],"1tgq3":[function(require,module,exports) {
 var ReactIs = require('react-is');
 // By explicitly using `prop-types` you are opting into new development behavior.
@@ -26840,7 +26786,6 @@ context.displayName = 'CardHeaderContext';
 exports.default = context;
 
 },{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"8lxon"}],"ikZdr":[function(require,module,exports) {
->>>>>>> Stashed changes
 var $parcel$ReactRefreshHelpers$3741 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -30144,9 +30089,6 @@ var utils = require('./../utils');
     return utils.isObject(payload) && payload.isAxiosError === true;
 };
 
-<<<<<<< Updated upstream
-},{"./../utils":"8tj0b"}],"jUTZ8":[function() {},{}]},["6quZ9","eYhbv","dLPEP"], "dLPEP", "parcelRequireaec4")
-=======
 },{"./../utils":"8tj0b"}],"aP2YV":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$8dd4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
@@ -42296,6 +42238,5 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshSig$ = prevRefreshSig;
 }
 },{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","@parcel/transformer-js/src/esmodule-helpers.js":"8lxon","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5QWMd","react-bootstrap":"h2YVd"}],"jUTZ8":[function() {},{}]},["6quZ9","eYhbv","dLPEP"], "dLPEP", "parcelRequireaec4")
->>>>>>> Stashed changes
 
 //# sourceMappingURL=index.6701a6e1.js.map
