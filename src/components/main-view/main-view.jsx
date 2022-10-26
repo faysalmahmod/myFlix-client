@@ -31,9 +31,17 @@ export class MainView extends React.Component {
       selectedMovie: newSelectedMovie,
     });
   }
-  render() {
-    const { movies, selectedMovie } = this.state;
 
+  // onLoggedIn (user) {
+  //   this.setState({ user })
+  // }
+
+  render() {
+    const { movies, selectedMovie, user } = this.state
+
+    // if (!this.state.user)
+    // return <LoginView onLoggedIn={user => this.onLoggedIn(this.state.user)} />
+  
     if (selectedMovie)
       return (
         <Row className="justify-content-md-center">
@@ -70,3 +78,7 @@ export class MainView extends React.Component {
     )
   }
 }
+
+
+
+
