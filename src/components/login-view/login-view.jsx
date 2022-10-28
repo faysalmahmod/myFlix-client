@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+import axios from 'axios'
+
 import {
   Form,
   Button,
@@ -16,8 +18,18 @@ export function LoginView (props) {
 
   const handleSubmit = e => {
     e.preventDefault()
-    console.log(username, password)
-    props.onLoggedIn(username)
+    axios
+      .post('https://api-movie-myflix.herokuapp.com/login', {
+        Username: username,
+        Password: password
+      })
+      .then(response => {
+        const data = response.data
+        props.onLoggedIn(data)
+      })
+      .catch(error => {
+        console.log('No such User exists')
+      })
   }
 
   return (

@@ -17,7 +17,7 @@ export class MainView extends React.Component {
 
   componentDidMount() {
     axios
-      .get("http://api-movie-myflix.herokuapp.com/movies")
+      .get("https://api-movie-myflix.herokuapp.com/movies")
       .then((response) => {
         this.setState({ movies: response.data });
       })
@@ -32,15 +32,15 @@ export class MainView extends React.Component {
     });
   }
 
-  // onLoggedIn (user) {
-  //   this.setState({ user })
-  // }
+  onLoggedIn (user) {
+    this.setState({ user })
+  }
 
   render() {
     const { movies, selectedMovie, user } = this.state
 
-    // if (!this.state.user)
-    // return <LoginView onLoggedIn={user => this.onLoggedIn(this.state.user)} />
+    if (!this.state.user)
+    return <LoginView onLoggedIn={user => this.onLoggedIn(this.state.user)} />
   
     if (selectedMovie)
       return (
