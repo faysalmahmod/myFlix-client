@@ -4,47 +4,68 @@ import { RegistrationView } from '../registration-view/registration-view'
 import { MovieCard } from '../movie-card/movie-card'
 import { MovieView } from '../movie-view/movie-view'
 import { LoginView } from '../login-view/login-view'
-import {Row,Col} from 'react-bootstrap'
+import { Row, Col } from 'react-bootstrap'
 
 export class MainView extends React.Component {
-  constructor() {
-    super();
+  constructor () {
+    super()
     this.state = {
       movies: [],
-      selectedMovie: null,
-    };
+      selectedMovie: null
+    }
   }
 
-  componentDidMount() {
+  componentDidMount () {
     axios
-      .get("https://api-movie-myflix.herokuapp.com/movies")
-      .then((response) => {
-        this.setState({ movies: response.data });
+      .get('https://api-movie-myflix.herokuapp.com/movies')
+      .then(response => {
+        this.setState({ movies: response.data })
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch(error => {
+        console.log(error)
+      })
   }
 
-  setSelectedMovie(newSelectedMovie) {
+  setSelectedMovie (newSelectedMovie) {
     this.setState({
-      selectedMovie: newSelectedMovie,
-    });
+      selectedMovie: newSelectedMovie
+    })
   }
 
-  onLoggedIn (user) {
-    this.setState({ user })
+  onLoggedIn (authData) {
+    console.log(authData)
+    this.setState({
+      user: authData.user.Username
+    })
+    localStorage.setItem('token', authData.token)
+    localStorage.setItem('user', authData.user.Username)
+    this.getMovies(authData.token)
   }
 
-  render() {
+  getMovies (token) {
+    axios
+      .get('YOUR_API_URL/movies', {
+        headers: { Authorization: `Bearer ${token}` }
+      })
+      .then(response => {
+        // Assign the result to the state
+        this.setState({
+          movies: response.data
+        })
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
+  }
+  render () {
     const { movies, selectedMovie, user } = this.state
 
     if (!this.state.user)
-    return <LoginView onLoggedIn={user => this.onLoggedIn(this.state.user)} />
-  
+      return <LoginView onLoggedIn={user => this.onLoggedIn(this.state.user)} />
+
     if (selectedMovie)
       return (
-        <Row className="justify-content-md-center">
+        <Row className='justify-content-md-center'>
           <Col md={8}>
             <MovieView
               movie={selectedMovie}
@@ -56,29 +77,22 @@ export class MainView extends React.Component {
         </Row>
       )
 
-    if (movies.length === 0)
-      return <div className="main-view"></div>;
+    if (movies.length === 0) return <div className='main-view'></div>
 
     return (
-      
-        <Row className="main-view justify-content-md-center">
+      <Row className='main-view justify-content-md-center'>
         {movies.map(movie => (
           <Col md={3}>
-          <MovieCard
-            key={movie._id}
-            movie={movie}
-            onMovieClick={(movie) => {
-              this.setSelectedMovie(movie);
-            }}
-          />
+            <MovieCard
+              key={movie._id}
+              movie={movie}
+              onMovieClick={movie => {
+                this.setSelectedMovie(movie)
+              }}
+            />
           </Col>
         ))}
-        </Row>
-
+      </Row>
     )
   }
 }
-
-
-
-
