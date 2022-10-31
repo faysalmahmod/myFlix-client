@@ -15,6 +15,30 @@ export function RegistrationView (props) {
   const [password, setPassword] = useState('')
   const [email, setEmail] = useState('')
   const [birthday, setBirthday] = useState('')
+  // Declare hook for each input
+  const [usernameErr, setUsernameErr] = useState('')
+  const [passwordErr, setPasswordErr] = useState('')
+  //Validate Inputs from user
+
+  const validate = () => {
+    let isReq = true
+    if (!username) {
+      setUsernameErr('Username Required')
+      isReq = false
+    } else if (username.length < 2) {
+      setUsernameErr('Username must be longer tha 2 characters')
+      isReq = false
+    }
+    if (!password) {
+      setPasswordErr('Password Required')
+      isReq = false
+    } else if (password.length < 6) {
+      setPasswordErr('Password must be greater than 6 digits')
+      isReq = false
+    }
+    return isReq
+  }
+
 
   const handleSubmit = e => {
     e.preventDefault()
