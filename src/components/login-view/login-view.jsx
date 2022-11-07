@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import axios from 'axios'
+import {RegistrationView} from '../registration-view/registration-view'
 
 import {
   Form,
@@ -39,23 +40,30 @@ export function LoginView (props) {
   }
   const handleSubmit = e => {
     e.preventDefault()
-    const isReq = validate();
-    if(isReq){
-    axios
-      .post("https://myflixbackend.herokuapp.com/login", {
-        Username: username,
-        Password: password
-      })
-      .then(response => {
-        const data = response.data
-        props.onLoggedIn(data)
-      })
-      .catch(error => {
-        console.log('No such User exists')
-      })
+    const isReq = validate()
+    if (isReq) {
+      axios
+        .post('https://myflixbackend.herokuapp.com/login', {
+          Username: username,
+          Password: password
+        })
+        .then(response => {
+          const data = response.data
+          props.onLoggedIn(data)
+        })
+        .catch(error => {
+          console.log('No such User exists')
+        })
+    } else {
+      console.log('Please Enter Username and Password')
+    }
   }
-}
 
+  const registerhandle =()=>{
+    return(
+    <RegistrationView></RegistrationView>
+)
+}
   return (
     <Container>
       <Row>
@@ -81,6 +89,9 @@ export function LoginView (props) {
                       type='password'
                       onChange={e => setPassword(e.target.value)}
                     />
+                    <small id='passwordHelpBlock' className='form-text text-muted'>
+                      Your password must be atleast 6 characters long.
+                    </small>
                   </Form.Group>
                   <Button
                     style={{
@@ -104,6 +115,7 @@ export function LoginView (props) {
                     }}
                     variant='secondary'
                     type='button'
+                    onClick={registerhandle}
                   >
                     Register
                   </Button>

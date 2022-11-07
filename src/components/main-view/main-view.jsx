@@ -1,38 +1,40 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { RegistrationView } from '../registration-view/registration-view'
 import { MovieCard } from '../movie-card/movie-card'
 import { MovieView } from '../movie-view/movie-view'
 import { LoginView } from '../login-view/login-view'
 import { Row, Col } from 'react-bootstrap'
+import './main-view.scss'
 
 export class MainView extends React.Component {
-  constructor () {
+  constructor() {
     super()
     this.state = {
       movies: [],
       selectedMovie: null
+      // user:null
     }
   }
 
-  componentDidMount () {
-    let accessToken = localStorage.getItem("token");
+  componentDidMount() {
+    let accessToken = localStorage.getItem('token')
     if (accessToken !== null) {
       this.setState({
-        user: localStorage.getItem("user"),
-      });
-      this.getMovies(accessToken);
+        user: localStorage.getItem('user')
+      })
+      this.getMovies(accessToken)
     }
   }
 
-  setSelectedMovie (newSelectedMovie) {
+  setSelectedMovie(newSelectedMovie) {
     this.setState({
       selectedMovie: newSelectedMovie
     })
   }
 
-  onLoggedIn (authData) {
+  onLoggedIn(authData) {
     console.log(authData)
     this.setState({
       user: authData.user.Username
@@ -43,16 +45,16 @@ export class MainView extends React.Component {
   }
 
   onLoggedOut() {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
+    localStorage.removeItem('token')
+    localStorage.removeItem('user')
     this.setState({
-      user: null,
-    });
+      user: null
+    })
   }
 
-  getMovies (token) {
+  getMovies(token) {
     axios
-      .get("http://myflixbackend.herokuapp.com/movies", {
+      .get('http://myflixbackend.herokuapp.com/movies', {
         headers: { Authorization: `Bearer ${token}` }
       })
       .then(response => {
@@ -65,11 +67,11 @@ export class MainView extends React.Component {
         console.log(error)
       })
   }
-  render () {
+  render() {
     const { movies, selectedMovie, user } = this.state
 
     if (!this.state.user)
-      return <LoginView onLoggedIn={user => this.onLoggedIn(this.state.user)} />
+      return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
 
     if (selectedMovie)
       return (
@@ -88,6 +90,7 @@ export class MainView extends React.Component {
     if (movies.length === 0) return <div className='main-view'></div>
 
     return (
+      <>
       <Row className='main-view justify-content-md-center'>
         {movies.map(movie => (
           <Col md={3}>
@@ -100,7 +103,12 @@ export class MainView extends React.Component {
             />
           </Col>
         ))}
+
       </Row>
+            
+      <button className='btn-logout' onClick={() => { this.onLoggedOut() }}>Logout</button>
+       
+      </>
     )
   }
 }
