@@ -1,0 +1,53 @@
+.movie-textarea.card-body {
+  padding: 0 15px 0 0;
+}
+
+span.movie-description {
+  display: block;
+  padding-bottom: 15px;
+}
+
+div.movie-genre-description,
+div.movie-actors {
+  display: block;
+  padding-bottom: 15px;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.button-movie-view-add-favorite {
+  position: absolute;
+  right: 10px;
+}
+
+.btn-logout {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  color: white;
+  padding: 15px 32px;
+  text-decoration: none;
+  font-size: 16px;
+  display: flex;
+}
+.fav-movie {
+  margin-bottom: 15px;
+}
+.fav-movie figure {
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.fav-movie figure img {
+  height: 400px;
+}
+.my-flix {
+  color: steelblue;
+}
+/*# sourceMappingURL=index.c1e31cef.css.map */
