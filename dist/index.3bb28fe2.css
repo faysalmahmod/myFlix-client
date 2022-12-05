@@ -1,0 +1,52 @@
+
+
+.my-flix {
+  color: #4682b4;
+}
+
+.btn-logout {
+  text-align: center;
+  color: #fff;
+  background-color: #4caf50;
+  border: none;
+  margin: 1rem auto;
+  padding: 15px 32px;
+  font-size: 16px;
+  text-decoration: none;
+  display: flex;
+}
+
+.fav-movie {
+  margin-bottom: 15px;
+}
+
+.fav-movie figure {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.fav-movie figure img {
+  height: 400px;
+}
+
+.movie-textarea.card-body {
+  padding: 0 15px 0 0;
+}
+
+span.movie-description, div.movie-genre-description, div.movie-actors {
+  padding-bottom: 15px;
+  display: block;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.button-movie-view-add-favorite {
+  position: absolute;
+  right: 10px;
+}
+
+/*# sourceMappingURL=index.3bb28fe2.css.map */
