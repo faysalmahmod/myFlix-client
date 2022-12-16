@@ -51,7 +51,7 @@ export class ProfileView extends React.Component {
       });
   };
 
-  userupdate = (e) => {
+  updateUser = (e) => {
     const username = localStorage.getItem("user");
     const token = localStorage.getItem("token");
     axios
@@ -224,7 +224,7 @@ export class ProfileView extends React.Component {
                   <Button
                     variant='primary'
                     type='submit'
-                    onClick={this.userupdate}
+                    onClick={this.updateUser}
                   >
                     Update Profile
                   </Button>{" "}

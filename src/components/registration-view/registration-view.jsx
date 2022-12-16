@@ -73,6 +73,7 @@ export function RegistrationView (props) {
       })
       .then(response => {
         const data = response.data
+        console.log(data);
         alert('Registration successful,Please Login to proceed!!');
         window.open('/','_self');
       })
@@ -87,9 +88,9 @@ export function RegistrationView (props) {
   }
 
   return (
-    <Container>
-      <Row>
-        <Col>
+    <Container className="register-container">
+      <Row className="justify-content-md-center mt-5">
+        <Col md={5}>
           <CardGroup>
             <Card style={{ marginTop: 100, marginBottom: 50, width: '30' }}>
               <Card.Body>
@@ -168,10 +169,7 @@ export function RegistrationView (props) {
                       margin: 4
                     }}
                     type='button'
-                    onClick={() => {
-                      props.onBackClick(null)
-                    }}
-                  >
+                    onClick={() => { onBackClick(null); }}>
                     Return to Login Page
                   </Button>
                 </Form>
