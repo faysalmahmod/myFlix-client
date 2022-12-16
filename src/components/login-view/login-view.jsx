@@ -43,7 +43,7 @@ export function LoginView (props) {
     const isReq = validate()
     if (isReq) {
       axios
-        .post('https://myflixbackend.herokuapp.com/login', {
+        .post('https://moviesapi1.herokuapp.com/login', {
           Username: username,
           Password: password
         })

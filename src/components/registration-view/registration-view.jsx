@@ -64,7 +64,7 @@ export function RegistrationView (props) {
     e.preventDefault()
     const isReq = validate();
     if(isReq){
-      axios.post('https://myflixbackend.herokuapp.com/users', {
+      axios.post('https://moviesapi1.herokuapp.com/users', {
         Name:name,
         Username: username,
         Password: password,

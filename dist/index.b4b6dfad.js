@@ -27165,7 +27165,7 @@ class MainView extends (0, _reactDefault.default).Component {
         });
     }
     getMovies(token) {
-        (0, _axiosDefault.default).get("https://myflixbackend.herokuapp.com/movies", {
+        (0, _axiosDefault.default).get("https://moviesapi1.herokuapp.com/movies", {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -33526,7 +33526,7 @@ function RegistrationView(props) {
     const handleSubmit = (e)=>{
         e.preventDefault();
         const isReq = validate();
-        if (isReq) (0, _axiosDefault.default).post("https://myflixbackend.herokuapp.com/users", {
+        if (isReq) (0, _axiosDefault.default).post("https://moviesapi1.herokuapp.com/users", {
             Name: name,
             Username: username,
             Password: password,
@@ -39980,7 +39980,7 @@ class MovieView extends (0, _reactDefault.default).Component {
         const username = localStorage.getItem("user");
         const token = localStorage.getItem("token");
         e.preventDefault();
-        (0, _axiosDefault.default).post(`https://myflixbackend.herokuapp.com/users/${username}/favourite/${movie._id}`, {
+        (0, _axiosDefault.default).post(`https://moviesapi1.herokuapp.com/users/${username}/favourite/${movie._id}`, {
             username: localStorage.getItem("user")
         }, {
             headers: {
@@ -40225,7 +40225,7 @@ function LoginView(props) {
     const handleSubmit = (e)=>{
         e.preventDefault();
         const isReq = validate();
-        if (isReq) (0, _axiosDefault.default).post("https://myflixbackend.herokuapp.com/login", {
+        if (isReq) (0, _axiosDefault.default).post("https://moviesapi1.herokuapp.com/login", {
             Username: username,
             Password: password
         }).then((response)=>{
@@ -40572,7 +40572,7 @@ class ProfileView extends (0, _reactDefault.default).Component {
     getUser = ()=>{
         const username = localStorage.getItem("user");
         const token = localStorage.getItem("token");
-        (0, _axiosDefault.default).get(`https://myflixbackend.herokuapp.com/users/${username}`, {
+        (0, _axiosDefault.default).get(`https://moviesapi1.herokuapp.com/users/${username}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -40591,7 +40591,7 @@ class ProfileView extends (0, _reactDefault.default).Component {
     userupdate = (e)=>{
         const username = localStorage.getItem("user");
         const token = localStorage.getItem("token");
-        (0, _axiosDefault.default).put(`https://myflixbackend.herokuapp.com/users/${username}`, {
+        (0, _axiosDefault.default).put(`https://moviesapi1.herokuapp.com/users/${username}`, {
             Username: this.state.Username,
             Password: this.state.Password,
             Email: this.state.Email,
@@ -40621,7 +40621,7 @@ class ProfileView extends (0, _reactDefault.default).Component {
         if (confirmDelete) {
             const username = localStorage.getItem("user");
             const token = localStorage.getItem("token");
-            (0, _axiosDefault.default).delete(`https://myflixbackend.herokuapp.com/users/${username}`, {
+            (0, _axiosDefault.default).delete(`https://moviesapi1.herokuapp.com/users/${username}`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -40639,7 +40639,7 @@ class ProfileView extends (0, _reactDefault.default).Component {
         // e.preventDefault();
         const username = localStorage.getItem("user");
         const token = localStorage.getItem("token");
-        (0, _axiosDefault.default).delete(`https://myflixbackend.herokuapp.com/users/${username}/movies/${movieId}`, {
+        (0, _axiosDefault.default).delete(`https://moviesapi1.herokuapp.com/users/${username}/movies/${movieId}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }

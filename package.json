@@ -3,7 +3,8 @@
   "description": "Frontend of MyFlix",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel src/index.html -p 3000"
   },
   "repository": {
     "type": "git",

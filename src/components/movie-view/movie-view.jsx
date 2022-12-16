@@ -13,7 +13,7 @@ export class MovieView extends React.Component {
     e.preventDefault()
     axios
       .post(
-        `https://myflixbackend.herokuapp.com/users/${username}/favourite/${movie._id}`,
+        `https://moviesapi1.herokuapp.com/users/${username}/favourite/${movie._id}`,
         { username: localStorage.getItem('user') },
         {
           headers: { Authorization: `Bearer ${token}` }
