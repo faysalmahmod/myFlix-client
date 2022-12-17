@@ -83,21 +83,6 @@ body {
   display: flex;
 }
 
-.fav-movie {
-  margin-bottom: 15px;
-}
-
-.fav-movie figure {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  position: relative;
-  overflow: hidden;
-}
-
-.fav-movie figure img {
-  height: 400px;
-}
-
 .director-view {
   color: #fff;
   text-align: justify;
