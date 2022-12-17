@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { BrowserRouter as Router, Redirect, Route } from 'react-router-dom'
+import { HashRouter as Router, Redirect, Route } from 'react-router-dom'
 import { RegistrationView } from '../registration-view/registration-view'
 import { MovieCard } from '../movie-card/movie-card'
 import { MovieView } from '../movie-view/movie-view'
