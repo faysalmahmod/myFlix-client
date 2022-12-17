@@ -1,7 +1,7 @@
 {
   "name": "myflix-client",
   "description": "Frontend of MyFlix",
-  "main": "index.html",
+  "main": "index.jsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel src/index.html -p 3000",
