@@ -1,5 +1,6 @@
 import React from "react";
 import { Navbar, Nav, Button, Container } from "react-bootstrap";
+import './navBar.scss'
 
 export function Menubar({ user }) {
   const onLoggedOut = () => {
@@ -19,6 +20,7 @@ export function Menubar({ user }) {
   };
 
   return (
+    <Container>
     <Navbar
       className='main-nav'
       sticky='top'
@@ -26,7 +28,6 @@ export function Menubar({ user }) {
       expand='lg'
       variant='dark'
     >
-      <Container>
         <Navbar.Brand className='navbar-logo' href='/'>
           myFlix
         </Navbar.Brand>
@@ -44,7 +45,8 @@ export function Menubar({ user }) {
             {!isAuth() && <Nav.Link href='/register'>Sign-up</Nav.Link>}
           </Nav>
         </Navbar.Collapse>
-      </Container>
+     
     </Navbar>
+    </Container>
   );
 }

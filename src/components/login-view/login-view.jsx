@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import axios from 'axios'
 import {RegistrationView} from '../registration-view/registration-view'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import {
   Form,
@@ -12,6 +14,8 @@ import {
   Card,
   CardGroup
 } from 'react-bootstrap'
+
+
 
 export function LoginView (props) {
   const [username, setUsername] = useState('')
@@ -38,12 +42,15 @@ export function LoginView (props) {
     }
     return isReq
   }
+
+  const notify = () => toast("Logged in sucessfully!");
+
   const handleSubmit = e => {
     e.preventDefault()
     const isReq = validate()
     if (isReq) {
       axios
-        .post('https://moviesapi1.herokuapp.com/login', {
+        .post('https://moviesapi1.herokuapp.com/login/', {
           Username: username,
           Password: password
         })
@@ -105,6 +112,7 @@ export function LoginView (props) {
                     onClick={handleSubmit}
                   >
                     Submit
+                    <ToastContainer/>
                   </Button>
                   <Button
                     style={{

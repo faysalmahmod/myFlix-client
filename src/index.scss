@@ -1,5 +1,36 @@
-$color: steelblue;
 
-.my-flix {
-  color: $color;
+/* color scheme by visme.co "Bert"*/
+$color-header: #66FCF1;
+$color-text: #f5f6ff;
+$color-background: #1F2833;
+$color-background-nav: #0B0C10;
+$color-button-outline: #45A29E;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  min-height: 100vh;
+  margin: 0;
+}
+
+.app {
+  font-family: 'Inter', sans-serif;
+  background-color: $color-background;
+  min-height: 100vh;
+
+}
+
+.flex-wrapper{
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.footer{
+  margin-top: auto;
 }

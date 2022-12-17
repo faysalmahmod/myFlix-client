@@ -32,11 +32,6 @@ export class MainView extends React.Component {
     }
   }
 
-  // setSelectedMovie (newSelectedMovie) {
-  //   this.setState({
-  //     selectedMovie: newSelectedMovie
-  //   })
-  // }
 
   onLoggedIn (authData) {
     console.log(authData)
@@ -45,7 +40,7 @@ export class MainView extends React.Component {
     })
     localStorage.setItem('token', authData.token)
     localStorage.setItem('user', authData.user.Username)
-    this.getMovies(authData.token)
+    this.getMovies(authData.token) //this.getMovies(authData) is called and gets the movies from your API once the user is logged in. 
   }
 
   onLoggedOut () {
@@ -58,8 +53,8 @@ export class MainView extends React.Component {
 
   getMovies (token) {
     axios
-      .get('https://moviesapi1.herokuapp.com/movies', {
-        headers: { Authorization: `Bearer ${token}` }
+      .get('https://moviesapi1.herokuapp.com/movies/', {
+        headers: { Authorization: `Bearer ${token}` } //passing bearer authorization in the header of our HTTP requests
       })
       .then(response => {
         // Assign the result to the state

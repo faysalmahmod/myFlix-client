@@ -1,4 +1,32 @@
+
+[build]
+command = "npm run build"
+publish = "dist"
+
+[dev]
+publish = "src"
+
 [[redirects]]
-  from = "/*"
-  to = "/"
-  status = 200
+from = "/users/me"
+to = "/"
+status = 200
+
+[[redirects]]
+from = "/movies/*"
+to = "/"
+status = 200
+
+[[redirects]]
+from = "/genres/*"
+to = "/"
+status = 200
+
+[[redirects]]
+from = "/directors/*"
+to = "/"
+status = 200
+
+[[redirects]]
+from = "/login"
+to = "/"
+status = 200
