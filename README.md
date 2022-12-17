@@ -84,7 +84,7 @@ Clicking on a link in the Single movie view returns data about the director of t
 ```bash
 @parcel/package-manager: Could not find module "@parcel/transformer-sass" satisfying 2.0.0-rc.0
 ```
-the solution was to remove the @oarcel/transformer-sass:^2.4.1 from the package.json,  deleting node-modules and package-lock.json file and then run npm install. As a result the version 2.0.0-rc.0 was installed and added as a dependencies.
+the solution was to remove the @parcel/transformer-sass:^2.4.1 from the package.json,  deleting node-modules and package-lock.json file and then run npm install. As a result the version 2.0.0-rc.0 was installed and added as a dependencies.
 
 * Parcel build process threw error, which was solved by adding type="module" to script tag in index.html
 * add to package.json
