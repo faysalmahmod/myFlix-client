@@ -132,15 +132,7 @@ export class MainView extends React.Component {
                   if (user) return <Redirect to='/' />
                   return (
                     <Col lg={8} md={8}>
-                      <RegistrationView onSubmitRegistration={(name, password, email) => {
-                        registerUser(name, password, email)
-                          .then(registered => {
-                            if (registered) {
-                              return <Redirect to='/' />
-                            }
-                            return <Redirect to='/register' />
-                          })
-                      }} />
+                      <RegistrationView  />
                     </Col>
                   )
                 }}

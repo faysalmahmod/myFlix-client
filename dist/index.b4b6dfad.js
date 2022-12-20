@@ -27285,18 +27285,7 @@ class MainView extends (0, _reactDefault.default).Component {
                                         return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                                             lg: 8,
                                             md: 8,
-                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _registration1View.RegistrationView), {
-                                                onSubmitRegistration: (name, password, email)=>{
-                                                    registerUser(name, password, email).then((registered)=>{
-                                                        if (registered) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Redirect), {
-                                                            to: "/"
-                                                        }, void 0, false, void 0, void 0);
-                                                        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Redirect), {
-                                                            to: "/register"
-                                                        }, void 0, false, void 0, void 0);
-                                                    });
-                                                }
-                                            }, void 0, false, void 0, void 0)
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _registration1View.RegistrationView), {}, void 0, false, void 0, void 0)
                                         }, void 0, false, void 0, void 0);
                                     }
                                 }, void 0, false, {
@@ -27326,7 +27315,7 @@ class MainView extends (0, _reactDefault.default).Component {
                                     }
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 148,
+                                    lineNumber: 140,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27351,7 +27340,7 @@ class MainView extends (0, _reactDefault.default).Component {
                                     }
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 170,
+                                    lineNumber: 162,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27376,7 +27365,7 @@ class MainView extends (0, _reactDefault.default).Component {
                                     }
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 195,
+                                    lineNumber: 187,
                                     columnNumber: 15
                                 }, this)
                             ]
@@ -40916,7 +40905,7 @@ function LoginView(props) {
         }).catch((error)=>{
             console.log("No such User exists");
         });
-        else console.log("Please Enter Username and Password");
+        else console.log(" Username or Password Error");
     };
     const registerhandle = ()=>{
         return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _registration1View.RegistrationView), {}, void 0, false, {

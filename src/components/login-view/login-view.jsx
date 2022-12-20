@@ -62,13 +62,13 @@ export function LoginView (props) {
           console.log('No such User exists')
         })
     } else {
-      console.log('Please Enter Username and Password')
+      console.log(' Username or Password Error')
     }
   }
 
   const registerhandle =()=>{
     return(
-    <RegistrationView></RegistrationView>
+    <RegistrationView />
 )
 }
   return (
