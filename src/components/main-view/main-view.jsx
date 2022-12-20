@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { HashRouter as Router, Redirect, Route } from 'react-router-dom'
-import { RegistrationView } from '../registration-view/registration-view'
+import { BrowserRouter as Router, Redirect, Route } from 'react-router-dom'
+import { RegistrationView } from '../registration-view/registration1-view'
 import { MovieCard } from '../movie-card/movie-card'
 import { MovieView } from '../movie-view/movie-view'
+import { ProfileView } from '../profile-view/profile-view'
 import { LoginView } from '../login-view/login-view'
 import { Container, Row, Col } from 'react-bootstrap'
 import { DirectorView } from '../director-view/director-view'
@@ -12,7 +13,7 @@ import { GenreView } from '../genre-view/genre-view'
 import './main-view.scss'
 
 export class MainView extends React.Component {
-  constructor () {
+  constructor() {
     super()
     this.state = {
       movies: [],
@@ -20,7 +21,7 @@ export class MainView extends React.Component {
     }
   }
 
-  componentDidMount () {
+  componentDidMount() {
     let accessToken = localStorage.getItem('token')
     if (accessToken !== null) {
       this.setState({
@@ -31,7 +32,7 @@ export class MainView extends React.Component {
   }
 
 
-  onLoggedIn (authData) {
+  onLoggedIn(authData) {
     console.log(authData)
     this.setState({
       user: authData.user.Username
@@ -41,7 +42,7 @@ export class MainView extends React.Component {
     this.getMovies(authData.token) //this.getMovies(authData) is called and gets the movies from your API once the user is logged in. 
   }
 
-  onLoggedOut () {
+  onLoggedOut() {
     localStorage.removeItem('token')
     localStorage.removeItem('user')
     this.setState({
@@ -49,7 +50,7 @@ export class MainView extends React.Component {
     })
   }
 
-  getMovies (token) {
+  getMovies(token) {
     axios
       .get('https://moviesapi1.herokuapp.com/movies/', {
         headers: { Authorization: `Bearer ${token}` } //passing bearer authorization in the header of our HTTP requests
@@ -64,7 +65,7 @@ export class MainView extends React.Component {
         console.log(error)
       })
   }
-  render () {
+  render() {
     const { movies, user } = this.state
     return (
       <>
@@ -131,7 +132,15 @@ export class MainView extends React.Component {
                   if (user) return <Redirect to='/' />
                   return (
                     <Col lg={8} md={8}>
-                      <RegistrationView />
+                      <RegistrationView onSubmitRegistration={(name, password, email) => {
+                        registerUser(name, password, email)
+                          .then(registered => {
+                            if (registered) {
+                              return <Redirect to='/' />
+                            }
+                            return <Redirect to='/register' />
+                          })
+                      }} />
                     </Col>
                   )
                 }}

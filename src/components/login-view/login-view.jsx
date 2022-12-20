@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import axios from 'axios'
-import {RegistrationView} from '../registration-view/registration-view'
+import {RegistrationView} from '../registration-view/registration1-view'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
