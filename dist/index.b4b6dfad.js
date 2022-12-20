@@ -2951,8 +2951,14 @@ class MyFlixApplication extends (0, _reactDefault.default).Component {
 }
 // Finds the root of your app
 const container = document.getElementsByClassName("app-container")[0];
+// create root
+const root = _client.createRoot(container);
 // Tells React to render your app in the root DOM element
-(0, _reactDomDefault.default).render(/*#__PURE__*/ (0, _reactDefault.default).createElement(MyFlixApplication), container);
+root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(MyFlixApplication, {}, void 0, false, {
+    fileName: "src/index.jsx",
+    lineNumber: 34,
+    columnNumber: 13
+}, undefined));
 
   $parcel$ReactRefreshHelpers$98a3.postlude(module);
 } finally {
