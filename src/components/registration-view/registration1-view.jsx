@@ -10,6 +10,7 @@ import {
   Card,
   CardGroup
 } from 'react-bootstrap'
+import {FormLayout} from "../form-layout/form-layout";
 import { Link } from 'react-router-dom'
 import './registration-view.scss'
 
@@ -149,16 +150,8 @@ export function RegistrationView () {
   }
 
   return (
-    <Container className="register-container">
-      <Row className="justify-content-md-center mt-5">
-        <Col md={5}>
-          <CardGroup>
-            <Card style={{ marginTop: 100, marginBottom: 50, width: '30' }}>
-              <Card.Body>
-                <Card.Title style={{ textAlign: 'center', fontSize: '2r' }}>
-                  Please Register Here!!
-                </Card.Title>
-                <Form>
+    <FormLayout title="Register">
+
                 <Form.Group>
                     <Form.Label>Name:</Form.Label>
                     <Form.Control
@@ -169,7 +162,7 @@ export function RegistrationView () {
                     />
                      {nameErr && <p>{nameErr}</p>}
                   </Form.Group>
-                  <Form.Group>
+                  <Form.Group className="mt-3">
                     <Form.Label>Username:</Form.Label>
                     <Form.Control
                       type='text'
@@ -179,7 +172,7 @@ export function RegistrationView () {
                     />
                      {usernameErr && <p>{usernameErr}</p>}
                   </Form.Group>
-                  <Form.Group>
+                  <Form.Group className="mt-3">
                     <Form.Label>Password:</Form.Label>
                     <Form.Control
                       type='password'
@@ -190,7 +183,7 @@ export function RegistrationView () {
                      {passwordErr && <p>{passwordErr}</p>}
                   </Form.Group>
 
-                  <Form.Group>
+                  <Form.Group className="mt-3">
                     <Form.Label>Email:</Form.Label>
                     <Form.Control
                       type='email'
@@ -200,7 +193,7 @@ export function RegistrationView () {
                     />
                      {emailErr && <p>{emailErr}</p>}
                   </Form.Group>
-                  <Form.Group>
+                  <Form.Group className="mt-3">
                     <Form.Label>Birthday:</Form.Label>
                     <Form.Control
                       type='birthday'
@@ -210,7 +203,8 @@ export function RegistrationView () {
                     />
                   </Form.Group>
 
-                  <Button
+                  <Button 
+                  className='mt-4'
                     style={{
                       textAlign: 'center',
                       fontSize: '5r',
@@ -223,6 +217,7 @@ export function RegistrationView () {
                     Register
                   </Button>
                   <Button
+                  className='mt-4'
                     style={{
                       textAlign: 'center',
                       fontSize: '5r',
@@ -233,13 +228,10 @@ export function RegistrationView () {
                     onClick={() => { onBackClick(null); }}>
                     Return to Login Page
                   </Button>
-                </Form>
-              </Card.Body>
-            </Card>
-          </CardGroup>
-        </Col>
-      </Row>
-    </Container>
+               
+
+
+      </FormLayout>
   )
 }
 

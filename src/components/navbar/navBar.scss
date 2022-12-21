@@ -1,0 +1,33 @@
+/* color scheme by visme.co "Bert"*/
+$color-contrast: #66FCF1;
+$color-text: #C5C6C7;
+$color-background: #1F2833;
+$color-background-nav: #f2f4fa;
+$color-primary: #45A29E;
+
+* {
+    box-sizing: border-box;
+}
+
+.navbar-container{
+    font-family: 'Inter', sans-serif;
+}
+
+.brandName-firstWord{
+    font-family: 'Square Peg', cursive;
+    font-size: xx-large;
+    font-weight: bold;
+    padding: 0 6px 0 14px;
+}
+
+.brandName-lastWord{
+    font-family: 'Square Peg', cursive;
+    font-size: xx-large;
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+.navLink-list{
+    font-size: large;
+    padding: 0 15px;
+}
